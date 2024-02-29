@@ -1,88 +1,114 @@
 <?php
 
-    function muestraNombres(){
+/* 
+FUNCIONES: 
+Una función es un conjunto de instrucciones agrupadas bajo un nombre concreto
+y que pueden reutilizarse solamente invocando a la función tantas veces como
+queramos.
 
-        echo "Manolito Perez <br>";
-        echo "Manolito Perez <br>";
-        echo "Manolito Perez <br>";
-        echo "Manolito Perez <br>";
-        echo "<hr/>";
-    }
+function nombreDeMiFuncion($parametro){
+	// BLOQUE / CONJUNTO DE INSTRUCCIONES
+}
+ 
+nombreDeMiFuncion($mi_parametro);
+nombreDeMiFuncion($mi_parametro);
+*/
 
-    //invocar funcion
-    muestraNombres();
-
-    function tabla($numero){
-        echo "<h3>Tabla de multiplicar del número: $numero</h3>";
-
-        for ($i=1; $i<=10; $i++){
-
-            $operacion = $numero * $i ;
-
-            echo "$numero x $i = $operacion <br>";
-        }
-    }
-    tabla (55);
-
-    for ($i=0; $i<=10;$i++){
-        tabla($i);
-    }
-
- echo "<br>";
-    //otro ejemplo
-
-
-    function calculadora ($numero1, $numero2, $negrita= false){
-
-        $suma= $numero1+ $numero2;
-        $resta= $numero1 - $numero2;
-        $multi= $numero1 * $numero2;
-        $division= $numero1 / $numero2;
-        $cadena_texto= "";
-
-
-        if ($negrita !=false){
-            $cadena_texto .= "<h1>";
-
-            echo "<h1>";
-        }
-        $cadena_texto .="Suma: $suma <br>";
-        $cadena_texto .= "Resta: $resta <br>";
-        $cadena_texto .= "Multiplicacion: $multi <br>";
-        $cadena_texto .="Division: $division <br>";
-
-        if ($negrita){
-            echo "<h1>";
-        }
-        return $cadena_texto;
-  }
-
-  echo calculadora(10,30);
-  echo calculadora(20,40, true);
-
-
-  function getNombre($nombre){
-    $texto= "El nombre es:  $nombre";
-    return $texto;
+// Ejemplo 1
+function muestraNombres(){
+	echo "Víctor Robles <br/>";
+	echo "Antonio Robles <br/>";
+	echo "Miguel Robles <br/>";
+	echo "Jesus Robles <br/>";
+	echo "<hr/>";
 }
 
-function getApellido($apellidos){
-   $texto=  "Los apellidos son: $apellidos";
-   return $texto;
+// Invocar funcion
+/*
+muestraNombres();
+muestraNombres();
+muestraNombres();
+ */
 
+
+// Ejemplo 2
+function tabla($numero){
+	echo "<h3> Tabla de multiplicar del número: $numero </h3>";
+	
+	for($i = 1; $i <= 10; $i++){
+		$operacion = $numero*$i;
+		echo "$numero x $i = $operacion <br/>";
+	}
 }
 
-  function devuelveElNombre($nombre, $apellidos){
-    $texto= getNombre($nombre) . "<br>" . 
-            getApellido($apellidos)    ;
-            
-            return $texto; 
+/*
+if(isset($_GET['numero'])){
+	tabla($_GET['numero']);
+	tabla(2);
+	tabla(9);
+}else{
+	echo "No hay numero para sacar la tabla";
+}
+*/
 
-  }
+/*
+for($i = 0; $i <= 10; $i++){
+	tabla($i);
+}
+ */
 
-  echo devuelveElNombre("Paco", "Perez");
+// Ejemplo 3
 
+function calculadora($numero1, $numero2, $negrita = false){
+	
+	// Conjunto de instrucciones a ejecutar
+	$suma = $numero1 + $numero2;
+	$resta = $numero1 - $numero2;
+	$multi = $numero1 * $numero2;
+	$division = $numero1 / $numero2;
+	
+	$cadena_texto = "";
+	
+	if($negrita){
+		$cadena_texto .= "<h1>";
+	}
+	
+	$cadena_texto .= "Suma: $suma <br/>";
+	$cadena_texto .= "Resta: $resta <br/>";
+	$cadena_texto .= "Multiplicación: $multi <br/>";
+	$cadena_texto .= "División: $division <br/>";
+	
+	if($negrita){
+		$cadena_texto .= "</h1>";
+	}
+	
+	$cadena_texto .= "<hr/>";
+	
+	return $cadena_texto;
+}
 
+echo calculadora(10, 20, true);
 
+// Ejemplo 4
 
-?>
+function getNombre($nombre){
+	$texto = "El nombre es: $nombre";
+	return $texto;
+}
+
+function getApellidos($apellidos){
+	$texto = "Los apellidos son: $apellidos";
+	return $texto;
+}
+
+function devuelveElNombre($nombre, $apellidos){
+	$texto = getNombre($nombre)
+			 ."<br/>".
+			 getApellidos($apellidos);
+	
+	return $texto;
+}
+
+echo devuelveElNombre("Victor", "Robles");
+// echo getNombre("Paco");
+

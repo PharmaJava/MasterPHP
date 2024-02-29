@@ -1,112 +1,88 @@
 <?php
 
-
-//Debuggear
-$nombre= "Paco Perez";
+// Debuggear
+$nombre = "Víctor Robles";
 var_dump($nombre);
 
-echo "<br>";
-//Fechas
-
-echo date ('d-m-Y');
-echo "<br>";
-
+// Fechas
+echo date('d-m-Y');
+echo "<br/>";
 echo time();
-echo "<br>";
 
-//Matematicas
-echo "Raiz Cuadrada de 10: " . sqrt(10);
-echo "<br>";
+// Matematicas
+echo "<br/>";
+echo "Raiz cuadrada de 10: ".sqrt(10);
 
-echo "Numero aleatorio entre 10 y 40: " .rand(10,40);
-echo "<br>";
+echo "<br/>";
+echo "Número aleatorio entre 10 y 40: ".rand(10,40);
 
-echo "Numero pi: " .pi();
-echo "<br>";
+echo "<br/>";
+echo "Número pi: ".pi();
 
-echo "Redonder: " .round(7.898234, 2);
-echo "<br>";
+echo "<br/>";
+echo "Redondear: ".round(7.891234, 1);
 
-
-//Mas funciones generales
-
+// Más funciones generales
+echo "<br/>";
 echo gettype($nombre);
-echo "<br>";
 
-if (is_string($nombre)){
-    echo "Esa variable es un string";
-
+// Detectar tipado
+echo "<br/>";
+if(is_string($nombre)){
+	echo "Esa variable es un string";
 }
 
-echo "<br>";
-    if (is_float($nombre)){
-
-    echo "la variable nombre no es un numero decimal";
-    }
-    echo "<br>";
-
-    if (isset($edad)){
-        echo "la variable existe";
-
-    }else {
-        echo "la variable no existe";
-    }
-
-    echo "<br>";
-
-    //Limpiar espacios
-    $frase= "     mi contenido   ";
-    echo "$frase";
-    echo "<br>";
-
-    var_dump($frase);
-    echo "<br>";
+echo "<br/>";
+if(!is_float($nombre)){
+	echo "La variable nombre no es un numero con decimales";
+}
 
 
-    var_dump(trim($frase));
-    echo "<br>";
+// Comprobar si existe una variable
+echo "<br/>";
+if(isset($nombre)){
+	echo "La variable existe";
+}else{
+	echo "La variable no existe";
+}
 
-    //Eliminar variables
-    $year= 2020;
-    unset($year);
-    echo "<br>";
+// Limpar espacios
+echo "<br/>";
+$frase = "    mi contenido    ";
+var_dump(trim($frase));
 
-    //Comprobar variable vacia
-    $texto= "";
+// Eliminar variables / indices
+$year = 2020;
+unset($year);
 
-    if (empty($texto)){
-        echo "la variable texto esta vacia";
-    }else{
-        echo "Tiene contenido";
-    }
-    echo "<br>";
+// Comprobar variable vacia
+$texto = " ff  ";
 
-    //contar caracteres de un string
+if(empty(trim($texto))){
+	echo "La variable texto esta vacia";
+}else{
+	echo "La variable texto TIENE CONTENIDO";
+}
+echo "<br/>";
 
-    $cadena= "12345";
-    echo strlen($cadena);
-    echo "<br>";
+// Contar caracteres de un string
+$cadena = "12345";
+echo strlen($cadena);
 
-    //Encontrar caracter
-    $frase= "La vida es bella";
-    echo strpos($frase, "vida");
-    echo "<br>";
+echo "<br/>";
 
-    //Reemplazar palabras de un string
+// Encontrar caracter
+$frase = "La vida es bella";
+echo strpos($frase, "i32313");
+echo "<br/>";
 
-    $frase= str_replace("vida", "moto", $frase);
-    echo $frase;
-    echo "<br>";
+// Reemplazar palabras de un string
+$frase = str_replace("vida", "moto", $frase);
+echo $frase;
+echo "<br/>";
 
-    //Mayusculas y minisculas
-    echo strtolower($frase);
-    echo "<br>";
-    echo strtoupper($frase);
-    echo "<br>";
+// MAYUSCULAS Y minusculas
+echo strtolower($frase);
+echo "<br/>";
+echo strtoupper($frase);
 
-
-
-
-
-
-?>
